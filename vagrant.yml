@@ -1,0 +1,11 @@
+---
+- hosts: default
+  sudo: yes
+  vars_files:
+    - my-vars.yml
+  
+  roles:
+    - { role: OULibraries.centos7, tags: ["centos7"] }
+    - { role: OULibraries.postgresql-server, tags: ["postgres"] }
+    - { role: OULibraries.dspace6, tags: ["dspace6"] }
+    - { role: OULibraries.users, tags: ["users"] }
